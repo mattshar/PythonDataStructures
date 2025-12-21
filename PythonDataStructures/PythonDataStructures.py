@@ -26,10 +26,3 @@ def binarySearch(arr, target):
     return -1 # target not found
 
 
-def linearSearch(arr, target):
-    for x in range(len(arr)):
-        if arr[x] == target:
-            return x
-        
-    return -1
-
