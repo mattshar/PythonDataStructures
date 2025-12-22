@@ -58,4 +58,15 @@ while q:
     for neighbors in D[node]:
         if neighbors not in seen:
             seen.add(neighbors)
-            q.append(neighbors)
+            q.append(neighbors) 
+
+
+# Does a path exist from a specific node to another?
+def hasPath(graph, src, dest):
+    if src == dest:
+        return True
+    for nei in graph[src]:
+        if hasPath(graph, nei, dest):
+            return True
+    return False
+
