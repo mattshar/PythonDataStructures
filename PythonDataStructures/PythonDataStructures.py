@@ -26,3 +26,17 @@ def binarySearch(arr, target):
     return -1 # target not found
 
 
+def heap_sort(arr):
+    n = len(arr)
+    for i in range(n // 2 - 1, -1, -1):
+        heapify(arr, n, i)
+
+    # Extract elements one by one from heap
+    for i in range(n - 1, 0, -1):
+        arr[i], arr[0] = arr[0], arr[i]
+        heapify(arr, i, 0)
+
+
+arr = [4, 10, 3, 5, 1]
+heap_sort(arr)
+print("Sorted array:", arr)
