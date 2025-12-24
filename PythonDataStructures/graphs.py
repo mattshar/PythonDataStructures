@@ -8,6 +8,7 @@ a = [[0,1], [1, 2], [0,3], [3,4], [3,6], [3, 7], [4, 2], [4, 5], [5,2]]
 
 # Convert edge list to adjacency list
 from collections import defaultdict
+from importlib.machinery import NamespaceLoader
 D = defaultdict(list)
 for u, v in a:
     D[u].append(v)
@@ -63,7 +64,7 @@ while q:
             q.append(neighbors) 
 
 
-# Does a path exist from a specific node to another?
+# Does a path exist from a specific node to another for a directed graph?
 def hasPath(graph, src, dest):
     if src == dest:
         return True
@@ -72,3 +73,26 @@ def hasPath(graph, src, dest):
             return True
     return False
 
+# Does a path exist from a specific nodd to another with for an undirected graph?
+
+def hashPathUndirected(edges, source, destination):
+    adjacency_list = {}
+    for u, v in edges:
+        if u not in adjacency_list:
+            adjacency_list[u] = []
+        if v not in adjacency_list:
+            adjacency_list[v] = []
+        adjacency_list[u].append(v)
+        adjacency_list[v].append(u)
+
+    stk = [source]
+    visited = set(source)
+    while stk:
+        node = stk.pop()
+        if node == destination:
+            return True
+        for nei in adjacency_list[node]:
+            if nei not in visited:
+                visited.add(nei)
+                stk.append(nei)
+    return False
