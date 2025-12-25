@@ -73,6 +73,7 @@ def hasPath(graph, src, dest):
             return True
     return False
 
+
 # Does a path exist from a specific nodd to another with for an undirected graph?
 
 def hashPathUndirected(edges, source, destination):
@@ -85,6 +86,7 @@ def hashPathUndirected(edges, source, destination):
         adjacency_list[u].append(v)
         adjacency_list[v].append(u)
 
+
     stk = [source]
     visited = set(source)
     while stk:
@@ -96,3 +98,25 @@ def hashPathUndirected(edges, source, destination):
                 visited.add(nei)
                 stk.append(nei)
     return False
+
+# count the number of components in an undirected graph 
+
+def returnComponentCount(graph):
+    components = 0 
+    stk = []
+    visited = set()
+    
+    for node in graph:
+        if node not in visited:
+            visited.add(node)
+            stk.append(node)
+            components += 1
+
+        while stk:
+            curr = stk.pop()
+            for nei in graph[curr]:
+                if nei not in visited:
+                    visited.add(nei)
+                    stk.append(nei)
+        
+    return components
