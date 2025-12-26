@@ -120,3 +120,28 @@ def returnComponentCount(graph):
                     stk.append(nei)
         
     return components
+
+
+def shortestPathUndirected(graph, start, end):
+
+    if start == end:
+        return 0
+
+    q = deque([(start, 0)])
+    visited = set([start])
+
+    while q:
+        node, distance = q.popleft()
+        for nei in graph[node]:
+            if nei == end:
+                return distance + 1
+            if nei not in visited:
+                visited.add(nei)
+                q.append((nei, distance + 1))
+            
+    return -1
+
+
+
+
+
