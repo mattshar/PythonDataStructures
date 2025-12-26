@@ -79,3 +79,15 @@ def merge(left, right):
 numbers = [8, 3, 5, 2, 7, 4]
 sorted_numbers = merge_sort(numbers)
 print(sorted_numbers)
+
+
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+    
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    
+    return quicksort(left) + middle + quicksort(right)
