@@ -25,6 +25,7 @@
   <ItemGroup>
     <Compile Include="graphs.py" />
     <Compile Include="PythonDataStructures.py" />
+    <Compile Include="Trees.py" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env1\">
