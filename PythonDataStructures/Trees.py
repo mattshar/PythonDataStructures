@@ -48,7 +48,7 @@ def TreeDFSearch(root, target):
         if node.left:
             stk.append(node.left)
             
-# binay tree Breadth First Search
+# binary tree Breadth First Search
 
 def TreeBFSearch(root, target):
     from collections import deque
@@ -62,3 +62,19 @@ def TreeBFSearch(root, target):
             q.append(node.left)
         if node.right:
             q.append(node.right)
+
+
+# tree sum 
+def TreeSum(root):
+    if not root:
+        return 0
+    stk = [root]
+    summation = 0
+    while stk:
+        node = stk.pop()
+        summation += node.val
+        if node.left:
+            stk.append(node.left)
+        if node.right:
+            stk.append(node.right)
+    return summation
