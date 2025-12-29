@@ -64,7 +64,7 @@ def TreeBFSearch(root, target):
             q.append(node.right)
 
 
-# tree sum 
+# sum of all nodes within a tree 
 def TreeSum(root):
     if not root:
         return 0
@@ -78,3 +78,18 @@ def TreeSum(root):
         if node.right:
             stk.append(node.right)
     return summation
+
+#minimum node value within a tree
+def TreeMin(root):
+    if not root:
+        return None
+    minimum = float('inf')
+    stk = [root]
+    while stk:
+        curr = stk.pop()
+        minimum = min(minimum, curr.val)
+        if curr.left:
+            stk.append(curr.left)
+        if curr.right:
+            stk.append(curr.right)
+    return minimum
