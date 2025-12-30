@@ -92,4 +92,4 @@ def TreeMin(root):
             stk.append(curr.left)
         if curr.right:
             stk.append(curr.right)
-    return minimum
+    return minimum 
