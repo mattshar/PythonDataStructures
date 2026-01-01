@@ -93,3 +93,17 @@ def TreeMin(root):
         if curr.right:
             stk.append(curr.right)
     return minimum 
+
+
+# path sum (assume a tree and node definition)
+def hashPathSum(root, targetSum):
+    def dfs(current_sum, node):
+        if not node:
+            return False
+
+        current_sum += node.val
+        if not node.left and not node.right:
+            if current_sum == targetSum:
+                return True
+        return (dfs(current_sum, node.left) or
+        dfs(current_sum, node.right))
