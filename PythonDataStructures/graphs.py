@@ -141,7 +141,31 @@ def shortestPathUndirected(graph, start, end):
             
     return -1
 
+import heapq
 
-def dijkstraShortestPath():
-    # visited set 
-    # we need a table to sore, node, shortest distance, and previous node
+def dijkstraShortestPath(n, edges, src):
+    # adjacency list
+    adj = {i: [] for i in range(n)}
+    for s, d, weight in edges:
+        adj[s].append((d, weight))
+
+    result = {}
+    heap = [(0, src)]
+
+    while heap:
+        dist, node = heapq.heappop(heap)
+        if node in result:
+            continue
+
+        result[node] = dist
+
+        for nei, w in adj[node]:
+            if nei not in result:
+                heapq.heappush(heap, (dist + w, nei))
+
+    # unreachable nodes
+    for i in range(n):
+        if i not in result:
+            result[i] = -1
+
+    return result
