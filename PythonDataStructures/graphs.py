@@ -142,6 +142,6 @@ def shortestPathUndirected(graph, start, end):
     return -1
 
 
-
-
-
+def dijkstraShortestPath():
+    # visited set 
+    # we need a table to sore, node, shortest distance, and previous node
