@@ -138,7 +138,7 @@ def shortestPathUndirected(graph, start, end):
             if nei not in visited:
                 visited.add(nei)
                 q.append((nei, distance + 1))
-            
+         
     return -1
 
 import heapq
@@ -148,7 +148,6 @@ def dijkstraShortestPath(n, edges, src):
     adj = {i: [] for i in range(n)}
     for s, d, weight in edges:
         adj[s].append((d, weight))
-
     result = {}
     heap = [(0, src)]
 
