@@ -21,3 +21,15 @@ class LinkedList:
 
         current.next = addedNode
 
+    def delete(self, data):
+        if not self.head:
+            return 
+        if self.head.data == data:
+            self.head = self.head.next
+            return
+
+        current = self.head
+        while current.next and current.next.data != data:
+            current = current.next
+        if current.next:
+            current.next = current.next.next
