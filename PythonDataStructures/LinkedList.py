@@ -33,3 +33,32 @@ class LinkedList:
             current = current.next
         if current.next:
             current.next = current.next.next
+
+
+
+    # doubly linked list implementation 
+
+class NodeDoubly:
+    def __init__(self, data):
+        self.data = data
+        self.next = None 
+        self.prev = None # backward facing pointer
+
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append2(self, data):
+        next_node = NodeDoubly(data)
+
+        if not self.head:
+            self.head = next_node
+            return 
+        current = self.head # iterator node 
+        while current:
+            current = current.next 
+        # by the time this loop breaks, we have a reference to the current ending node 
+
+        current.next = next_node
+        next_node.prev = current 
+
