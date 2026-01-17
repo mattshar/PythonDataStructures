@@ -26,6 +26,7 @@
     <Compile Include="graphs.py" />
     <Compile Include="LinkedList.py" />
     <Compile Include="PythonDataStructures.py" />
+    <Compile Include="queue_1.py" />
     <Compile Include="stacks.py" />
     <Compile Include="Trees.py" />
   </ItemGroup>

@@ -18,3 +18,4 @@ print(stack)
 
 # Check empty
 print(len(stack) == 0)  
+
