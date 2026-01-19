@@ -23,6 +23,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="decorators.py" />
     <Compile Include="graphs.py" />
     <Compile Include="LinkedList.py" />
     <Compile Include="PythonDataStructures.py" />
