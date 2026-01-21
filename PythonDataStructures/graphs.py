@@ -175,4 +175,16 @@ def dijkstraShortestPath(n, edges, src):
 
     return result
 
-def 
+def has_cycle_undirected(graph, node, visited, parent):
+    visited.add(node)
+    
+    for neighbor in graph[node]:
+        if neighbor not in visited:
+            if has_cycle_undirected(graph, neighbor, visited, node):
+                return True
+        
+
+        elif neighbor != parent:
+            return True
+            
+    return False
