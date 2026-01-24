@@ -27,3 +27,4 @@ class BST:
                 self._insert_recursive(current.right, value)
 
 
+
